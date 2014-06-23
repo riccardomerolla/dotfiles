@@ -6,10 +6,10 @@ configure your `zsh`, `byobu` and `emacs` development environment as follows:
 ```sh
 cd $HOME
 git clone https://github.com/riccardomerolla/dotfiles.git
-ln -sb dotfiles/.zsrc .
+ln -sb dotfiles/.zshrc .
 ln -sb dotfiles/.bashrc .
 mv .emacs.d .emacs.d~
 ln -s dotfiles/.emacs.d .
-mv .byobu.d .byobu.d~ ; ln -s dotfiles/.byobu.d .
+mv .byobu .byobu~ ; ln -s dotfiles/.byobu .
 ```
 
