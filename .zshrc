@@ -48,7 +48,7 @@ ZSH_THEME="amuse-rime"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github grandle heroku jira docker vagrant mvn svn sublime sudo)
+plugins=(aws bower coffee emacs git github grandle go golang grunt heroku jira docker docker-compose vagrant mvn node nvm sbt scala svn sublime sudo ubuntu)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -57,8 +57,9 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export GRADLE_HOME=/usr/local/share/gradle
 export SCALA_HOME=/usr/local/share/scala
-export PATH=$PATH:$SCALA_HOME/bin
+export PATH=$PATH:$SCALA_HOME/bin:$GRADLE_HOME/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -75,3 +76,16 @@ export PATH=$PATH:$SCALA_HOME/bin
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+
+export PATH="$NPM_PACKAGES/bin:$PATH"
+# Unset manpath so we can inherit from /etc/manpath via the `manpath`
+# command
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+export NODE_PATH=$NODE_PATH:/home/merollar/.npm-packages/lib/node_modules
